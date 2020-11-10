@@ -56,4 +56,7 @@ class OrdersController < ApplicationController
     order
   end
 
+  def ordered
+    @ordered ||= Order.where(id:params[:id]).map {|order|}
+  end
 end
